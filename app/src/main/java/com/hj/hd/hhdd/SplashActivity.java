@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.romainpiel.titanic.library.Titanic;
 import com.romainpiel.titanic.library.TitanicTextView;
@@ -33,6 +34,15 @@ public class SplashActivity extends AppCompatActivity {
 
         Typeface typeFace = Typeface.createFromAsset(getAssets(), "Satisfy-Regular.ttf"); // 폰트 설정 후
         titanicText.setTypeface(typeFace);
+
+        String folderPath = getFilesDir() + "/userdata/";
+        Log.d("loadCheck", folderPath);
+        File file = new File(folderPath);
+
+        if (!file.exists())
+        {
+            file.mkdirs();
+        }
 
         titanic.start(titanicText);
         flagPath = getFilesDir() + "/userdata/introFlag.dat";

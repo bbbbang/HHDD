@@ -7,7 +7,8 @@
     <item
         android:id="@+id/menu_intro"
         android:orderInCategory="100"
-        android:title="인트로" />
+        android:title="인트로"
+        android:icon="@drawable/outline_search_black_18"/>
     <item
         android:id="@+id/menu_help"
         android:orderInCategory="100"
@@ -15,5 +16,12 @@
     <item
         android:id="@+id/menu_reset"
         android:orderInCategory="100"
-        android:title="초기화" />
+        android:title="초기화"
+        android:icon="@drawable/outline_delete_forever_black_18"/>
+    <item
+        android:id="@+id/line"
+        android:orderInCategory="100"
+        android:title="hhhhh"
+        android:icon="@drawable/list_item_line"
+            />
 </menu>

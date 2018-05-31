@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
@@ -103,17 +102,9 @@ public class thirdFragment extends Fragment{
 
         e = new ListDialogFragment();
 
-        folderPath = getActivity().getFilesDir() + "/userdata/";
-        Log.d("loadCheck", folderPath);
-        File file = new File(folderPath);
-
-        if (!file.exists())
-        {
-            file.mkdirs();
-        }
-
         listView = (ListView)layout.findViewById(R.id.third_view_list);
 
+        folderPath = getActivity().getFilesDir() + "/userdata/";
 
         // 현재 시간을 가져와 현재 날짜를 기준으로 리스트뷰 갱신하기 위함
         now = System.currentTimeMillis();

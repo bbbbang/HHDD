@@ -29,4 +29,5 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.prolificinteractive:material-calendarview:1.4.3'
     implementation project(':titanicMod')
+    compile 'com.github.traex.rippleeffect:library:1.3'
 }

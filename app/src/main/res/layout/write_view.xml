@@ -24,25 +24,32 @@
         android:layout_marginTop="35dp"
         android:text="TextView" />
 
-    <TextView
-        android:id="@+id/write_view_confirm"
+    <com.andexert.library.RippleView
+        android:id="@+id/more1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="35dp"
-        android:text="confirm"
-        android:background="@drawable/click_effect" />
+        android:layout_margin="5dp"
 
-    <TextView
-        android:id="@+id/write_view_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="35dp"
-        android:text="back"
-        android:background="@drawable/click_effect" />
+        app:rv_color="@color/colorPrimaryDark">
+
+        <TextView
+            android:id="@+id/write_view_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="35dp"
+            android:text="confirm" />
+
+        <TextView
+            android:id="@+id/write_view_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="35dp"
+            android:text="back" />
+    </com.andexert.library.RippleView>
 
     <ImageView
         android:id="@+id/write_view_line"
@@ -68,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="start"
-            android:background="@null"/>
+            android:background="@null" />
     </android.support.design.widget.TextInputLayout >
 
 
