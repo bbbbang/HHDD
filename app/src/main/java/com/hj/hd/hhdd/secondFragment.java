@@ -205,6 +205,14 @@ public class secondFragment extends Fragment{
                     // 다이얼로그 보여주기
                     alertDialog.show();
                 }
+                else if (id == R.id.lock)
+                {
+                    Intent lockIntent = new Intent(getContext(), lockActivity.class);
+                    String sendText[] = {"SET",""};
+                    lockIntent.putExtra("password", sendText);
+                    startActivity(lockIntent);
+                    getActivity().finish();
+                }
 
                 menuDrawer.closeDrawer(GravityCompat.START);
                 return false;

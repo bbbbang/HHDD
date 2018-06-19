@@ -15,6 +15,7 @@
         android:layout_marginTop="80dp"
         android:text="암호입력" />
 
+
     <TextView
         android:id="@+id/lock_pad1"
         android:layout_width="wrap_content"
@@ -24,6 +25,7 @@
         android:layout_centerVertical="true"
         android:layout_margin="15dp"
         android:textSize="25dp"
+
         android:text="1" />
 
     <TextView
@@ -34,6 +36,7 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
         android:textSize="25dp"
+        android:background="?android:attr/selectableItemBackground"
         android:text="2" />
 
     <TextView
@@ -108,18 +111,6 @@
         android:textSize="25dp"
         android:text="9" />
 
-    <TextView
-        android:id="@+id/lock_pad_cencel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/lock_pad0"
-        android:layout_centerVertical="true"
-        android:layout_below="@+id/lock_pad7"
-        android:layout_margin="15dp"
-        android:gravity="center"
-        android:text="취소"
-        android:textAlignment="center"
-        android:textSize="22dp" />
 
     <TextView
         android:id="@+id/lock_pad0"
@@ -140,6 +131,56 @@
         android:layout_below="@+id/lock_pad9"
         android:layout_margin="15dp"
         android:textSize="25dp"
-        android:text="-" />
+        android:text="X" />
+
+
+    <TextView
+        android:id="@+id/show_password1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lock_title"
+        android:layout_toLeftOf="@+id/show_password2"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="_" />
+    <TextView
+        android:id="@+id/show_password2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lock_title"
+        android:layout_toLeftOf="@+id/show_password_blank"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="_" />
+    <TextView
+        android:id="@+id/show_password_blank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lock_title"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_centerHorizontal="true"
+        android:text="" />
+    <TextView
+        android:id="@+id/show_password3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lock_title"
+        android:layout_toRightOf="@+id/show_password_blank"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="_" />
+    <TextView
+        android:id="@+id/show_password4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lock_title"
+        android:layout_toRightOf="@+id/show_password3"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="_" />
 
 </RelativeLayout>

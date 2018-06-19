@@ -10,7 +10,9 @@ import android.util.Log;
 import com.romainpiel.titanic.library.Titanic;
 import com.romainpiel.titanic.library.TitanicTextView;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 
 /**
  * Created by hwangil on 2018-03-12.
@@ -23,6 +25,9 @@ public class SplashActivity extends AppCompatActivity {
     private final int SPLASH_DISPLAY_LENGTH = 2000;
     String flagPath;
     File files;
+
+    String pwPath;
+    File pwFiles;
     @Override
     protected void onCreate (Bundle savedInstanceState)
     {
@@ -48,6 +53,9 @@ public class SplashActivity extends AppCompatActivity {
         flagPath = getFilesDir() + "/userdata/introFlag.dat";
         files = new File (flagPath);
 
+        pwPath = getFilesDir() + "/userdata/pwFlag.dat";
+        pwFiles = new File (pwPath);
+
         Handler hd = new Handler();
         hd.postDelayed(new splashhandler(), 2000); // 1초 후에 hd handler 실행  3000ms = 3초
 
@@ -55,15 +63,44 @@ public class SplashActivity extends AppCompatActivity {
     }
     private class splashhandler implements Runnable{
         public void run(){
-              if (files.exists() == true) {
-                  Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
-                  startActivity(mainIntent);
-                  finish();
-                } else {
-                  Intent introIntent = new Intent(SplashActivity.this, IntroActivity.class);
-                  startActivity(introIntent);
-                  finish();
-              }
+            if (files.exists() == true)
+            {// 인트로 파일이 존재할 경우
+                if (pwFiles.exists() == true)
+                {// 패스워드 파일이 존재할 경우
+                    // 패스워드 액티비티 시작
+                    try
+                    {
+                        BufferedReader br = new BufferedReader(new FileReader(pwPath));
+                        String sendText[] = {"",""};
+
+                        sendText[1] = br.readLine();
+                        sendText[0] = "CHECK";
+                        br.close();
+
+                        Intent lockIntent = new Intent (SplashActivity.this, lockActivity.class);
+                        lockIntent.putExtra("password", sendText);
+                        startActivity(lockIntent);
+                        finish();
+
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                else
+                {// 인트로 파일은 존재하지만 패스워드 파일이 존재하지 않을 경우
+                    // 인트로 액티비티를 생략하고 메인 액티비티 시작
+                    Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+                    startActivity(mainIntent);
+                    finish();
+                }
+            }
+            else
+            {// 인트로 파일이 존재하지 않을 경우
+                // 인트로 액티비티 시작
+                Intent introIntent = new Intent(SplashActivity.this, IntroActivity.class);
+                startActivity(introIntent);
+                finish();
+            }
         }
     }
     @Override
